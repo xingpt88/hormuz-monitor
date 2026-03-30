@@ -1,0 +1,22 @@
+{
+  "name": "@xingpt/hormuz-monitor",
+  "version": "1.1.0",
+  "description": "Hormuz Strait shipping crisis monitor skill for OpenClaw",
+  "bin": {
+    "hormuz-monitor": "./install.js"
+  },
+  "keywords": [
+    "openclaw",
+    "openclaw-skill",
+    "hormuz",
+    "oil",
+    "geopolitics",
+    "monitor"
+  ],
+  "author": "xingpt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xingpt/hormuz-monitor"
+  }
+}
