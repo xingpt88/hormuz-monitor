@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const DATA = {
+const FALLBACK_DATA = {
   phase: 4, phaseName: "CRISIS",
   vesselCount: 0, vesselNormal: 153,
   daysSinceClosure: 28, jpmBuffer: 0,
@@ -22,21 +22,8 @@ const DATA = {
     { icon: "🇨🇳", text: "伊朗在海峡运营人民币'收费站'，中俄船只付费通行" },
     { icon: "📅", text: "Trump对伊朗重开海峡最后期限：4月6日" },
   ],
-  situationSummary: "伊朗战争进入第五周，霍尔木兹海峡商业通航实际归零。Brent原油3月暴涨55%，创有史以来最大单月涨幅，盘中触及$119.5高点。JPMorgan此前预测的25天储存缓冲已完全耗尽，海湾产油国开始被迫减产。Trump在FT专访中表示想要'拿走石油'，暗示可能对伊朗发起地面行动。伊朗正在海峡运营人民币计价的'收费站'系统，允许中国和俄罗斯关联船只付费通行。也门胡塞武装恢复向以色列发射导弹，红海航线同步中断。IEA释放的4亿桶战略储备已部分投入市场但对价格抑制有限。黄金从1月$5,602历史高点回落至~$4,500，美联储鹰派信号（年内仅降息一次预期）打压金价。Goldman Sachs警告若冲突持续，Brent可能突破2008年$147历史高点。",
-  timeline: [
-    { time: "Mar 30 08:00", tag: "ALERT", text: "Brent $114.75，3月累计涨幅55%，创历史最大单月涨幅" },
-    { time: "Mar 30 06:00", tag: "EVENT", text: "也门胡塞武装向以色列发射导弹，中东局势进一步升级" },
-    { time: "Mar 30 03:00", tag: "DIPLO", text: "Trump接受FT采访：'我想拿走石油'，暗示地面行动可能" },
-    { time: "Mar 29 20:00", tag: "IRAN", text: "伊朗在海峡运营人民币'收费站'，中俄关联船只付费通行" },
-    { time: "Mar 29 14:00", tag: "MARKET", text: "Goldman Sachs：地缘风险溢价$14-18/桶，若持续或破$147历史高" },
-    { time: "Mar 27 10:00", tag: "DIPLO", text: "Trump将伊朗重开海峡最后期限延至4月6日" },
-    { time: "Mar 25 08:00", tag: "ALERT", text: "JPM 25天储存缓冲正式耗尽，海湾产油国被迫减产" },
-    { time: "Mar 20 16:00", tag: "MARKET", text: "Brent盘中触及$119.5，52周新高" },
-    { time: "Mar 12 14:00", tag: "ATTACK", text: "两艘油轮在伊拉克外海遇袭起火；泰国船Mayuree Naree仍燃烧" },
-    { time: "Mar 5 08:00", tag: "MARKET", text: "P&I保险全面撤出，海峡商业通航事实上中断" },
-    { time: "Mar 2 00:00", tag: "IRAN", text: "IRGC正式确认海峡关闭" },
-    { time: "Feb 28 22:00", tag: "EVENT", text: "美以联军发动'史诗之怒'行动打击伊朗" },
-  ],
+  situationSummary: "数据加载中...",
+  timeline: [],
   vesselHistory: [
     { d: "2/27", v: 153 }, { d: "3/2", v: 0 }, { d: "3/5", v: 5 },
     { d: "3/8", v: 13 }, { d: "3/12", v: 2 }, { d: "3/15", v: 1 },
@@ -48,6 +35,18 @@ const DATA = {
     { name: "Kpler/AIS", status: "ok" }, { name: "CNBC", status: "ok" },
   ],
 };
+
+function useMonitorData() {
+  const [data, setData] = useState(FALLBACK_DATA);
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    fetch("/data.json?" + Date.now())
+      .then(r => { if (!r.ok) throw new Error("fetch failed"); return r.json(); })
+      .then(d => { setData(d); setLoaded(true); })
+      .catch(() => setLoaded(true));
+  }, []);
+  return { data, loaded };
+}
 
 const tagColor = { ALERT: "#ef4444", EVENT: "#3b82f6", IRAN: "#a855f7", ATTACK: "#f97316", DIPLO: "#22c55e", MARKET: "#eab308", INTEL: "#06b6d4" };
 
@@ -65,19 +64,72 @@ function Clock({ label, tz, flag }) {
   );
 }
 
-function MiniBar({ data }) {
+function VesselChart({ data }) {
+  const [hover, setHover] = useState(null);
   const max = 160;
+  const chartH = 140;
+  const yTicks = [0, 40, 80, 120, 153];
   return (
-    <div style={{ display: "flex", alignItems: "flex-end", height: 64, gap: 1 }}>
-      {data.map((d, i) => {
-        const h = Math.max((d.v / max) * 100, 3);
-        return (
-          <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <div style={{ width: "100%", height: `${h}%`, minHeight: 2, borderRadius: "2px 2px 0 0", background: d.v < 15 ? "#dc2626" : "#059669", opacity: 0.85 }} />
-            <span style={{ fontSize: 7, color: "#6b7280", marginTop: 2, fontFamily: "monospace" }}>{d.d}</span>
-          </div>
-        );
-      })}
+    <div style={{ display: "flex", gap: 0 }}>
+      {/* Y axis - absolute positioned to match bar heights */}
+      <div style={{ position: "relative", width: 36, height: chartH, marginRight: 6, marginBottom: 20 }}>
+        {yTicks.map((t, i) => {
+          const bottom = (t / max) * chartH;
+          return (
+            <span key={i} style={{
+              position: "absolute", bottom: bottom - 5, right: 0,
+              fontSize: 9, color: "#4b5563", fontFamily: "monospace", textAlign: "right",
+            }}>{t}</span>
+          );
+        })}
+      </div>
+      {/* Chart area */}
+      <div style={{ flex: 1, position: "relative" }}>
+        {/* Grid lines - absolute positioned to match Y ticks */}
+        {yTicks.map((t, i) => {
+          const bottom = (t / max) * chartH;
+          return (
+            <div key={i} style={{
+              position: "absolute", left: 0, right: 0, bottom: bottom + 20,
+              borderBottom: t === 0 ? "1px solid #374151" : "1px dashed #1a1f2e",
+              pointerEvents: "none",
+            }} />
+          );
+        })}
+        {/* Bar area */}
+        <div style={{ display: "flex", alignItems: "flex-end", height: chartH, gap: 2, position: "relative" }}>
+          {data.map((d, i) => {
+            const h = (d.v / max) * 100;
+            const hPx = (d.v / max) * chartH;
+            const isHovered = hover === i;
+            return (
+              <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", position: "relative", cursor: "pointer" }}
+                onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(null)}>
+                {/* Tooltip */}
+                {isHovered && (
+                  <div style={{
+                    position: "absolute", bottom: hPx + 8, left: "50%", transform: "translateX(-50%)",
+                    background: "#1f2937", border: "1px solid #374151", borderRadius: 6, padding: "4px 8px",
+                    fontSize: 11, color: "#e5e7eb", fontFamily: "'JetBrains Mono',monospace", whiteSpace: "nowrap", zIndex: 10,
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
+                  }}>
+                    <span style={{ color: d.v < 15 ? "#f97316" : "#34d399", fontWeight: 700 }}>{d.v}</span>
+                    <span style={{ color: "#6b7280" }}> 艘/日</span>
+                  </div>
+                )}
+                <div style={{
+                  width: "100%", height: Math.max(hPx, 3), borderRadius: "3px 3px 0 0",
+                  background: d.v < 15
+                    ? isHovered ? "#ef4444" : "linear-gradient(to top, #7c2d12, #dc2626)"
+                    : isHovered ? "#34d399" : "linear-gradient(to top, #064e3b, #059669)",
+                  opacity: isHovered ? 1 : 0.85, transition: "opacity 0.15s",
+                }} />
+                <span style={{ fontSize: 9, color: isHovered ? "#e5e7eb" : "#6b7280", marginTop: 3, fontFamily: "monospace", transition: "color 0.15s" }}>{d.d}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
@@ -155,7 +207,7 @@ function Section({ title, tag, children, style: sx }) {
 export default function HormuzDashboard() {
   const [modal, setModal] = useState(false);
   const [tick, setTick] = useState(false);
-  const d = DATA;
+  const { data: d, loaded } = useMonitorData();
   useEffect(() => { const i = setInterval(() => setTick(p => !p), 2000); return () => clearInterval(i); }, []);
   const phaseCol = { 1: "#22c55e", 2: "#eab308", 3: "#f97316", 4: "#ef4444" }[d.phase];
 
@@ -222,7 +274,13 @@ export default function HormuzDashboard() {
                 ))}
               </div>
             </Section>
-            <Section title="海峡通行量" tag="VESSELS"><MiniBar data={d.vesselHistory} /></Section>
+            <Section title="保险与航运" tag="INSURANCE">
+              <div style={{ fontSize: 12, color: "#d1d5db", lineHeight: 1.7 }}>
+                <div style={{ marginBottom: 6 }}>🔴 P&I保险：{d.insurance}</div>
+                <div style={{ marginBottom: 6 }}>🔴 保费涨幅：300%+</div>
+                <div>🟡 绕行：沙特+阿联酋管道合计~420万桶/日（覆盖17%）</div>
+              </div>
+            </Section>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -237,15 +295,12 @@ export default function HormuzDashboard() {
             <Section title="情景概率" tag="PREDICTION">
               {d.scenarios.map((s, i) => <ScenarioBar key={i} {...s} />)}
             </Section>
-            <Section title="保险与航运" tag="INSURANCE">
-              <div style={{ fontSize: 12, color: "#d1d5db", lineHeight: 1.7 }}>
-                <div style={{ marginBottom: 6 }}>🔴 P&I保险：{d.insurance}</div>
-                <div style={{ marginBottom: 6 }}>🔴 保费涨幅：300%+</div>
-                <div>🟡 绕行：沙特+阿联酋管道合计~420万桶/日（覆盖17%）</div>
-              </div>
-            </Section>
           </div>
         </div>
+
+        <Section title="海峡通行量" tag="VESSELS" style={{ marginBottom: 12 }}>
+          <VesselChart data={d.vesselHistory} />
+        </Section>
 
         <Section title="态势总结" tag="SITUATION SUMMARY" style={{ marginBottom: 12 }}>
           <p style={{ fontSize: 13, color: "#d1d5db", lineHeight: 1.8, margin: 0 }}>{d.situationSummary}</p>

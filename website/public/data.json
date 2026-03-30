@@ -1,0 +1,50 @@
+{
+  "phase": 4,
+  "phaseName": "CRISIS",
+  "vesselCount": 0,
+  "vesselNormal": 153,
+  "daysSinceClosure": 28,
+  "jpmBuffer": 0,
+  "brent": 114.75,
+  "brentChg": "+55% MTD",
+  "wti": 100.96,
+  "wtiChg": "+1.4%",
+  "gold": 4500,
+  "goldChg": "-19.6% from ATH",
+  "ttf": 58.7,
+  "vlcc": 580,
+  "insurance": "主要承保商全面撤出，战争险区域扩大至阿曼水域",
+  "scenarios": [
+    { "label": "快速解决 (2周内)", "pct": 5, "trend": "↓" },
+    { "label": "持续中断 (1-3月)", "pct": 30, "trend": "↓" },
+    { "label": "结构性升级 (3月+)", "pct": 45, "trend": "↑" },
+    { "label": "全面危机 (地面战)", "pct": 20, "trend": "↑" }
+  ],
+  "thingsToWatch": [
+    { "icon": "⚫", "text": "JPM 25天储存缓冲已耗尽，海湾产油国被迫减产" },
+    { "icon": "🇺🇸", "text": "Trump接受FT采访称要'take the oil'，暗示地面行动" },
+    { "icon": "🚀", "text": "也门胡塞武装向以色列发射导弹，局势进一步扩大" },
+    { "icon": "🇨🇳", "text": "伊朗在海峡运营人民币'收费站'，中俄船只付费通行" },
+    { "icon": "📅", "text": "Trump对伊朗重开海峡最后期限：4月6日" }
+  ],
+  "situationSummary": "伊朗战争进入第五周，霍尔木兹海峡商业通航实际归零。Brent原油3月暴涨55%，创有史以来最大单月涨幅。JPMorgan此前预测的25天储存缓冲已完全耗尽，海湾产油国开始被迫减产。",
+  "timeline": [
+    { "time": "Mar 30 08:00", "tag": "ALERT", "text": "Brent $114.75，3月累计涨幅55%，创历史最大单月涨幅" },
+    { "time": "Mar 30 06:00", "tag": "EVENT", "text": "也门胡塞武装向以色列发射导弹，中东局势进一步升级" },
+    { "time": "Mar 30 03:00", "tag": "DIPLO", "text": "Trump接受FT采访：'我想拿走石油'，暗示地面行动可能" },
+    { "time": "Mar 29 20:00", "tag": "IRAN", "text": "伊朗在海峡运营人民币'收费站'，中俄关联船只付费通行" },
+    { "time": "Mar 29 14:00", "tag": "MARKET", "text": "Goldman Sachs：地缘风险溢价$14-18/桶，若持续或破$147历史高" },
+    { "time": "Mar 27 10:00", "tag": "DIPLO", "text": "Trump将伊朗重开海峡最后期限延至4月6日" },
+    { "time": "Mar 25 08:00", "tag": "ALERT", "text": "JPM 25天储存缓冲正式耗尽，海湾产油国被迫减产" }
+  ],
+  "vesselHistory": [
+    { "d": "2/27", "v": 153 }, { "d": "3/2", "v": 0 }, { "d": "3/5", "v": 5 },
+    { "d": "3/8", "v": 13 }, { "d": "3/12", "v": 2 }, { "d": "3/15", "v": 1 },
+    { "d": "3/20", "v": 0 }, { "d": "3/25", "v": 0 }, { "d": "3/28", "v": 0 }, { "d": "3/30", "v": 0 }
+  ],
+  "sources": [
+    { "name": "JMIC", "status": "ok" }, { "name": "Tasnim", "status": "ok" },
+    { "name": "Fars News", "status": "ok" }, { "name": "Windward", "status": "ok" },
+    { "name": "Kpler/AIS", "status": "ok" }, { "name": "CNBC", "status": "ok" }
+  ]
+}
