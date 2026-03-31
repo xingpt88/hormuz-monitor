@@ -1,0 +1,112 @@
+{
+  "phase": 4,
+  "phaseName": "CRISIS",
+  "vesselCount": 11,
+  "vesselNormal": 153,
+  "daysSinceClosure": 30,
+  "jpmBuffer": 0,
+  "brent": 115.27,
+  "brentChg": "+58% since pre-crisis",
+  "wti": 0,
+  "wtiChg": "",
+  "gold": 4493.0,
+  "goldChg": "-19.8% from ATH",
+  "ttf": 55.0,
+  "vlcc": 0,
+  "insurance": "War risk premiums **4-10% of vessel value per voyage** (vs 0.2-0.5% pre-crisis; 20-50x increase); International Group of P&I Clubs suspended standard cover effective Mar 5; Lloyd's Joint War Committee redesignated entire Arabian Gulf as conflict zone; estimated $8-$14/bbl \"geopolitical risk premium\" added to global oil prices; for $120M VLCC, ~$6M-12M premium per transit",
+  "scenarios": [
+    {
+      "label": "快速解决 (2周内)",
+      "pct": 5,
+      "trend": "↓"
+    },
+    {
+      "label": "持续中断 (1-3月)",
+      "pct": 30,
+      "trend": "→"
+    },
+    {
+      "label": "结构性升级 (3月+)",
+      "pct": 45,
+      "trend": "↑"
+    },
+    {
+      "label": "全面危机 (地面战)",
+      "pct": 20,
+      "trend": "↑"
+    }
+  ],
+  "thingsToWatch": [
+    {
+      "icon": "⚫",
+      "text": "JPM 25天储存缓冲已耗尽（第30天），海湾产油国被迫减产"
+    },
+    {
+      "icon": "🛢️",
+      "text": "Brent突破$100（当前$115.27），通胀压力加大"
+    },
+    {
+      "icon": "💥",
+      "text": "**航运量回升 + 中国船只通行 + 外交僵局持续** — Trump 10-day delay on threatened strike against Iran energy infrastructure to April 6, 2026 remains in effect; **Pakistan four-party meeting (Turkey, Egypt, Saudi Arabia, Pakistan) continues March 29-30** focused on ceasefire proposals; Pakistan FM Ishaq Dar states both US and Iran have expressed confidence in Pakistan's mediation role; Iran agreed to permit 20 additional Pakistani-flagged vessels as confidence-building measure (2 ships/day); US 15-point ceasefire proposal conveyed through Pakistan mediator (sanctions relief, nuclear rollback, missile limits, Hormuz access); Iran FM Araghchi explicitly denies negotiations with US, characterizes US messages as \"not a conversation nor a negotiation\"; Iran parliament drafting bill to formalize transit fees and codify sovereignty (\"Tehran Toll Booth\" legal framework); Iran reportedly submitted 5-point counter-proposal demanding war reparations and recognition of sovereignty over Strait; Iran parliament speaker Qalibaf dismisses talks as \"cover\" and warns against US ground invasion; Malaysia announces 7 stranded vessels will depart; Indonesia and Thailand report positive talks for safe passage; **March 30: Two Chinese ultra-large container carriers (CSCL Indian Ocean, CSCL Arctic Ocean) successfully transited** after March 27 attempt was aborted when IRGC turned back three container ships; Chinese-owned bulk carrier Mac Hope also transited; **JMIC reports 11 transits/day March 28-29, up from 1-2 previously**; GPS/GNSS/AIS interference significantly reduced, now \"sporadic and localised\""
+    },
+    {
+      "icon": "🇮🇷",
+      "text": "**Selective blockade maintained + \"Tehran Toll Booth\" operat"
+    }
+  ],
+  "situationSummary": "海峡通行量11艘/日，Brent $115.27，封锁第30天。**航运量回升 + 中国船只通行 + 外交僵局持续** — Trump 10-day delay on threatened strike against Iran energy infrastructure to April 6, 2026 remains in effect; **Pakistan four-party meeting (Turkey, Egypt, Saudi Arabia, Pakistan) continues March 29-30** focused on ceasefire proposals; Pakistan FM Ishaq Dar states both US and Iran have expressed confidence in Pakistan's mediation role; Iran agreed to permit 20 additional Pakistani-flagged vessels as confidence-building measure (2 ships/day); US 15-point ceasefire proposal conveyed through Pakistan mediator (sanctions relief, nuclear rollback, missile limits, Hormuz access); Iran FM Araghchi explicitly denies negotiations with US, characterizes US messages as \"not a conversation nor a negotiation\"; Iran parliament drafting bill to formalize transit fees and codify sovereignty (\"Tehran Toll Booth\" legal framework); Iran reportedly submitted 5-point counter-proposal demanding war reparations and recognition of sovereignty over Strait; Iran parliament speaker Qalibaf dismisses talks as \"cover\" and warns against US ground invasion; Malaysia announces 7 stranded vessels will depart; Indonesia and Thailand report positive talks for safe passage; **March 30: Two Chinese ultra-large container carriers (CSCL Indian Ocean, CSCL Arctic Ocean) successfully transited** after March 27 attempt was aborted when IRGC turned back three container ships; Chinese-owned bulk carrier Mac Hope also transited; **JMIC reports 11 transits/day March 28-29, up from 1-2 previously**; GPS/GNSS/AIS interference significantly reduced, now \"sporadic and localised\" **Selective blockade maintained + \"Tehran Toll Booth\" operational + Denies negotiations + Legislative codification advancing + Pakistan exemption granted + Chinese vessels approved** — IRGC: \"Strait under Iran's control, freedom of navigation subject to Iran-defined frameworks\"; vetting system operational for approved vessels (China, Russia, Iraq, Pakistan, Turkey, Malaysia, Thailand, India); FM Araghchi: \"Strait open, but closed to our enemies\"; Iran denies negotiations with US despite Pakistan confirmation; ~400-2,000 vessels waiting outside strait; monetizing transit fees (~$2M-2.8M/vessel, some in yuan); Iran maintains own oil exports via \"dark\" transits without AIS (16M+ barrels to China since early March); Parliament Speaker Ghalibaf: \"Situation in Strait will not revert to pre-war status\"; IRGC warns complete closure if US attacks Iranian power plants; **Parliament advancing legislation** to formalize fees and codify sovereignty; IRGC expands influence over Iran decision-making amidst leadership changes; senior Iranian official: \"path forward possible if realism prevails in Washington\"; Iran submitted 5-point counter-proposal (war reparations, sovereignty recognition); **March 29: Pakistan announces Iran allows 20 additional Pakistani ships (2/day)**; **March 30: Chinese container ships transit successfully**; IRGC announced Mar 27 it prevented three container ships from passing through",
+  "timeline": [
+    {
+      "time": "Mar 30 17:18",
+      "tag": "ATTACK",
+      "text": "**航运量回升 + 中国船只通行 + 外交僵局持续** — Trump 10-day delay on threatened strike against Iran energy infrastructure to April 6, 2026 remains in effect; **Pakistan four-party meeting (Turkey, Egypt, Saudi Arabia, Pakistan) continues March 29-30** focused on ceasefire proposals; Pakistan FM Ishaq Dar states both US and Iran have expressed confidence in Pakistan's mediation role; Iran agreed to permit 20 additional Pakistani-flagged vessels as confidence-building measure (2 ships/day); US 15-point ceasefire proposal conveyed through Pakistan mediator (sanctions relief, nuclear rollback, missile limits, Hormuz access); Iran FM Araghchi explicitly denies negotiations with US, characterizes US messages as \"not a conversation nor a negotiation\"; Iran parliament drafting bill to formalize transit fees and codify sovereignty (\"Tehran Toll Booth\" legal framework); Iran reportedly submitted 5-point counter-proposal demanding war reparations and recognition of sovereignty over Strait; Iran parliament speaker Qalibaf dismisses talks as \"cover\" and warns against US ground invasion; Malaysia announces 7 stranded vessels will depart; Indonesia and Thailand report positive talks for safe passage; **March 30: Two Chinese ultra-large container carriers (CSCL Indian Ocean, CSCL Arctic Ocean) successfully transited** after March 27 attempt was aborted when IRGC turned back three container ships; Chinese-owned bulk carrier Mac Hope also transited; **JMIC reports 11 transits/day March 28-29, up from 1-2 previously**; GPS/GNSS/AIS interference significantly reduced, now \"sporadic and localised\""
+    },
+    {
+      "time": "Mar 30 17:18",
+      "tag": "IRAN",
+      "text": "**Selective blockade maintained + \"Tehran Toll Booth\" operational + Denies negotiations + Legislative codification advancing + Pakistan exemption granted + Chinese vessels approved** — IRGC: \"Strait under Iran's control, freedom of navigation subject to Iran-defined frameworks\"; vetting system operational for approved vessels (China, Russia, Iraq, Pakistan, Turkey, Malaysia, Thailand, India); FM Araghchi: \"Strait open, but closed to our enemies\"; Iran denies negotiations with US despite Pakistan confirmation; ~400-2,000 vessels waiting outside strait; monetizing transit fees (~$2M-2.8M/vessel, some in yuan); Iran maintains own oil exports via \"dark\" transits without AIS (16M+ barrels to China since early March); Parliament Speaker Ghalibaf: \"Situation in Strait will not revert to pre-war status\"; IRGC warns complete closure if US attacks Iranian power plants; **Parliament advancing legislation** to formalize fees and codify sovereignty; IRGC expands influence over Iran decision-making amidst leadership changes; senior Iranian official: \"path forward possible if realism prevails in Washington\"; Iran submitted 5-point counter-proposal (war reparations, sovereignty recognition); **March 29: Pakistan announces Iran allows 20 additional Pakistani ships (2/day)**; **March 30: Chinese container ships transit successfully**; IRGC announced Mar 27 it prevented three container ships from passing through"
+    },
+    {
+      "time": "Mar 30 17:18",
+      "tag": "EVENT",
+      "text": "**Coalition fragmented + US military operations ongoing + Trump extension** — 22 nations condemn Iran's attacks and de facto closure; CENTCOM mine-laying prevention (16+ Iranian mine-laying ships destroyed); JMIC threat level: CRITICAL; GPS jamming widespread but reduced March 27-28; 22+ confirmed maritime incidents since Mar 1; **Trump extension to April 6**; US officials report dozen Iranian naval mines deployed; Israel strikes Tehran naval facilities; US employs A-10 Warthogs and Apache helicopters to target Iranian fast-attack boats and drones; 10,000+ targets struck, 92% of Iran's largest military assets destroyed; UAE announced March 27 willingness to join multinational naval force to reopen Hormuz; UK considering deploying mine-clearing vessel with advanced drones; US CENTCOM announced March 29 arrival of amphibious assault ship with thousands of Marines to Middle East"
+    },
+    {
+      "time": "Mar 30 17:18",
+      "tag": "ALERT",
+      "text": "**VESSEL COUNT INCREASE >50%** ⚠️"
+    }
+  ],
+  "vesselHistory": [
+    {
+      "d": "2/27",
+      "v": 153
+    }
+  ],
+  "sources": [
+    {
+      "name": "JMIC",
+      "status": "ok"
+    },
+    {
+      "name": "Tasnim",
+      "status": "ok"
+    },
+    {
+      "name": "Fars News",
+      "status": "ok"
+    },
+    {
+      "name": "Windward",
+      "status": "ok"
+    },
+    {
+      "name": "Kpler/AIS",
+      "status": "ok"
+    },
+    {
+      "name": "CNBC",
+      "status": "ok"
+    }
+  ]
+}
