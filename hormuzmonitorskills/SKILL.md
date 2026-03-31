@@ -116,13 +116,25 @@ If MONITOR_LOG.md has entries older than 7 days, remove them.
 If FLASH: send immediate alert. If no FLASH: send brief summary.
 
 ### Step 7: Update Website Data
-After writing MONITOR_LOG.md, run this command to update the website:
+After writing MONITOR_LOG.md, you MUST update the website. Execute these three commands in order:
 
-exec command: bash ~/hormuz-website/scripts/update_and_deploy.sh
+1. Pull latest website repo:
+   ```
+   cd ~/hormuz-website && git pull
+   ```
 
-This parses MONITOR_LOG.md into data.json and pushes to GitHub.
-Vercel auto-deploys on push. If the script fails, log the error but
-do not retry — the website will show the previous data until next cycle.
+2. Generate data.json from MONITOR_LOG.md:
+   ```
+   python3 ~/hormuz-website/scripts/update_website_data.py
+   ```
+
+3. Push to GitHub if data changed (Vercel auto-deploys on push):
+   ```
+   cd ~/hormuz-website && git add website/public/data.json && git diff --cached --quiet || (git commit -m "auto: update monitor data" && git push origin main)
+   ```
+
+This step is NOT optional. If any command fails, log the error and move on.
+Do NOT skip this step even if the monitor data looks unchanged.
 
 ## Alert format
 🚢 **Hormuz Monitor Update** [timestamp]
