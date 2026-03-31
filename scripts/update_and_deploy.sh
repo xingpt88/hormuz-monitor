@@ -5,19 +5,20 @@
 
 set -e
 
-WEBSITE_REPO="$HOME/hormuz-website/website"
-SCRIPT_PATH="$HOME/hormuz-website/scripts/update_website_data.py"
+REPO="$HOME/hormuz-website"
+SCRIPT="$REPO/scripts/update_website_data.py"
+DATA_FILE="$REPO/website/public/data.json"
 
 # 1. Generate data.json
 echo "📊 Generating data.json from MONITOR_LOG.md..."
-python3 "$SCRIPT_PATH"
+python3 "$SCRIPT"
 
-# 2. Git commit & push
-cd "$WEBSITE_REPO"
-if git diff --quiet public/data.json 2>/dev/null; then
+# 2. Git commit & push (only if data changed)
+cd "$REPO"
+if git diff --quiet "$DATA_FILE" 2>/dev/null; then
     echo "✅ No changes in data.json, skip push"
 else
-    git add public/data.json
+    git add "$DATA_FILE"
     git commit -m "auto: update monitor data $(date -u +%Y-%m-%dT%H:%MZ)"
     git push origin main
     echo "✅ Pushed to GitHub → Vercel will auto-deploy"
