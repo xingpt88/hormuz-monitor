@@ -5,15 +5,15 @@
   "vesselNormal": 153,
   "daysSinceClosure": 30,
   "jpmBuffer": 0,
-  "brent": 115.27,
-  "brentChg": "+58% since pre-crisis",
-  "wti": 0,
+  "brent": 109.0,
+  "brentChg": "+49% since pre-crisis",
+  "wti": 104.0,
   "wtiChg": "",
-  "gold": 4493.0,
-  "goldChg": "-19.7% from ATH",
+  "gold": 4500.0,
+  "goldChg": "-19.6% from ATH",
   "ttf": 55.0,
   "vlcc": 423,
-  "insurance": "War risk premiums 4-10% of vessel value per voyage (vs 0.2-0.5% pre-crisis; 20-50x increase); Intern…",
+  "insurance": "战争险保费5-10%船体价值/航次（战前0.25%），P&I标准保险暂停",
   "scenarios": [
     {
       "label": "快速解决 (2周内)",
@@ -43,47 +43,47 @@
     },
     {
       "icon": "🛢️",
-      "text": "Brent突破$100（当前$115.27），通胀压力加大"
+      "text": "Brent突破$100（当前$109.0），通胀压力加大"
     },
     {
       "icon": "🥇",
-      "text": "黄金$4,493/oz，距ATH -19.7% from ATH"
+      "text": "黄金$4,500/oz，距ATH -19.6% from ATH"
     },
     {
       "icon": "💥",
-      "text": "航运量回升 + 中国船只通行 + 外交僵局持续"
+      "text": "航运量稳定在11艘/日，外交斡旋持续但无突破"
     },
     {
       "icon": "🇮🇷",
-      "text": "Selective blockade maintained + \"Tehran Toll Booth…"
+      "text": "选择性封锁持续，拒绝美方方案，反提案要求战争赔偿和主权承认"
     }
   ],
-  "situationSummary": "海峡通行量11艘/日（正常153）。Brent $115.27/桶。封锁第30天。JPM缓冲已耗尽。航运量回升 + 中国船只通行 + 外交僵局持续。",
+  "situationSummary": "海峡通行量11艘/日（正常153）。Brent $109.0/桶。封锁第30天。JPM缓冲已耗尽。航运量稳定在11艘/日，外交斡旋持续但无突破。",
   "timeline": [
     {
-      "time": "Mar 30 17:18",
+      "time": "Mar 31 04:21",
       "tag": "DIPLO",
-      "text": "Indirect talks via Pakistan + Four-party Islamabad meeting + Stalemate on direct…"
+      "text": "巴基斯坦斡旋间接谈判，僵局未破，无直接会谈"
     },
     {
-      "time": "Mar 30 17:18",
+      "time": "Mar 31 04:21",
       "tag": "ATTACK",
-      "text": "航运量回升 + 中国船只通行 + 外交僵局持续"
+      "text": "航运量稳定在11艘/日，外交斡旋持续但无突破"
     },
     {
-      "time": "Mar 30 17:18",
+      "time": "Mar 31 04:21",
       "tag": "IRAN",
-      "text": "Selective blockade maintained + \"Tehran Toll Booth\" operational + Denies negotia…"
+      "text": "选择性封锁持续，拒绝美方方案，反提案要求战争赔偿和主权承认"
     },
     {
-      "time": "Mar 30 17:18",
+      "time": "Mar 31 04:21",
       "tag": "EVENT",
-      "text": "Coalition fragmented + US military operations ongoing + Trump extension"
+      "text": "联军持续军事行动，Trump延期至4月6日，阿联酋考虑加入多国海军"
     },
     {
-      "time": "Mar 30 17:18",
+      "time": "Mar 31 04:21",
       "tag": "ALERT",
-      "text": "VESSEL COUNT INCREASE >50% ⚠️\n  - Oil: $115.27 vs prior $116.18 = ~-0.8% change …"
+      "text": "无"
     }
   ],
   "vesselHistory": [
@@ -124,7 +124,7 @@
       "v": 0
     },
     {
-      "d": "3/30",
+      "d": "3/31",
       "v": 11
     }
   ],
