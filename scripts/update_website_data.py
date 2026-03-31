@@ -45,22 +45,22 @@ def parse_monitor_log():
     data = {}
 
     # Extract values with regex
-    vessel_match = re.search(r"Vessel crossings?:\s*~?(\d+)", latest, re.IGNORECASE)
+    vessel_match = re.search(r"Vessel crossings?:\s*\*{0,2}~?(\d+)", latest, re.IGNORECASE)
     data["vesselCount"] = int(vessel_match.group(1)) if vessel_match else 0
 
-    brent_match = re.search(r"Brent:\s*\$?([\d.]+)", latest)
+    brent_match = re.search(r"Brent:.*?\*{0,2}~?\$?([\d.]+)", latest)
     data["brent"] = float(brent_match.group(1)) if brent_match else 0
 
-    wti_match = re.search(r"WTI:\s*\$?([\d.]+)", latest)
+    wti_match = re.search(r"WTI:.*?\*{0,2}~?\$?([\d.]+)", latest)
     data["wti"] = float(wti_match.group(1)) if wti_match else 0
 
-    gold_match = re.search(r"Gold:\s*\$?([\d.,]+)", latest)
+    gold_match = re.search(r"Gold:.*?\*{0,2}~?\$?([\d.,]+)", latest)
     data["gold"] = float(gold_match.group(1).replace(",", "")) if gold_match else 0
 
-    ttf_match = re.search(r"TTF[^:]*:\s*[€$]?([\d.]+)", latest)
+    ttf_match = re.search(r"TTF[^:]*:.*?\*{0,2}~?[€$]?([\d.]+)", latest)
     data["ttf"] = float(ttf_match.group(1)) if ttf_match else 0
 
-    vlcc_match = re.search(r"VLCC[^:]*:\s*\$?([\d,]+)", latest)
+    vlcc_match = re.search(r"VLCC[^:]*:.*?\*{0,2}~?\$?([\d,]+)", latest)
     data["vlcc"] = int(vlcc_match.group(1).replace(",", "")) // 1000 if vlcc_match else 0
 
     # Extract status
