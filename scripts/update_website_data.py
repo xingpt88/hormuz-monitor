@@ -18,7 +18,7 @@ MEMORY_MD = os.path.join(WORKSPACE, "MEMORY.md")
 
 # Where your website repo's public/ folder is
 # Adjust this path to match your actual website repo location
-WEBSITE_REPO = os.path.expanduser("~/hormuz-website")
+WEBSITE_REPO = os.path.expanduser("~/hormuz-website/website")
 OUTPUT_PATH = os.path.join(WEBSITE_REPO, "public", "data.json")
 
 CLOSURE_START = datetime(2026, 3, 1, tzinfo=timezone.utc)

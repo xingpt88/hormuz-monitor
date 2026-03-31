@@ -5,7 +5,7 @@
 
 set -e
 
-WEBSITE_REPO="$HOME/hormuz-website"
+WEBSITE_REPO="$HOME/hormuz-website/website"
 SCRIPT_PATH="$HOME/hormuz-website/scripts/update_website_data.py"
 
 # 1. Generate data.json
