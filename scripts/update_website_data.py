@@ -97,27 +97,22 @@ def parse_monitor_log():
         else:
             data["vlcc"] = 0
 
-    # --- Text fields ---
+    # --- Text fields (supports both old English and new Chinese field names) ---
+    # Each field: try new Chinese name first, fallback to old English name
+    # Match until next top-level "- " line (sub-bullets start with "  - ")
+    def extract_summary(pattern, text):
+        m = re.search(pattern + r"\s*(.+?)(?:\n- |\n  -|\Z)", text, re.IGNORECASE | re.DOTALL)
+        return strip_md(m.group(1).strip()) if m else ""
+
     status_match = re.search(r"Status:\s*(.+)", latest, re.IGNORECASE)
     data["status"] = strip_md(status_match.group(1).strip()) if status_match else "UNKNOWN"
 
-    incidents_match = re.search(r"New incidents?:\s*(.+?)(?:\n- |\Z)", latest, re.IGNORECASE | re.DOTALL)
-    data["incidents"] = strip_md(incidents_match.group(1).strip()) if incidents_match else "None"
-
-    iran_match = re.search(r"Iran stance:\s*(.+?)(?:\n- |\Z)", latest, re.IGNORECASE | re.DOTALL)
-    data["iranStance"] = strip_md(iran_match.group(1).strip()) if iran_match else ""
-
-    western_match = re.search(r"Western response:\s*(.+?)(?:\n- |\Z)", latest, re.IGNORECASE | re.DOTALL)
-    data["westernResponse"] = strip_md(western_match.group(1).strip()) if western_match else ""
-
-    insurance_match = re.search(r"Insurance:\s*(.+?)(?:\n- |\Z)", latest, re.IGNORECASE | re.DOTALL)
-    data["insurance"] = strip_md(insurance_match.group(1).strip()) if insurance_match else ""
-
-    flash_match = re.search(r"Flash triggers?:\s*(.+?)(?:\n- |\Z)", latest, re.IGNORECASE | re.DOTALL)
-    data["flash"] = strip_md(flash_match.group(1).strip()) if flash_match else "none"
-
-    diplo_match = re.search(r"Diplomatic:\s*(.+?)(?:\n- |\Z)", latest, re.IGNORECASE | re.DOTALL)
-    data["diplomatic"] = strip_md(diplo_match.group(1).strip()) if diplo_match else ""
+    data["incidents"] = extract_summary(r"(?:新事件|New incidents?):", latest) or "None"
+    data["iranStance"] = extract_summary(r"(?:伊朗立场|Iran stance):", latest)
+    data["westernResponse"] = extract_summary(r"(?:西方动态|Western response):", latest)
+    data["insurance"] = extract_summary(r"(?:保险|Insurance):", latest)
+    data["flash"] = extract_summary(r"(?:Flash触发|Flash triggers?):", latest) or "none"
+    data["diplomatic"] = extract_summary(r"(?:外交动态|Diplomatic):", latest)
 
     # Extract timestamp
     ts_match = re.search(r"## (\d{4}-\d{2}-\d{2}T[\d:]+Z?)", latest)
