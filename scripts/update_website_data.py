@@ -211,11 +211,12 @@ def build_website_data():
     gold_chg = f"{((latest['gold'] / 5595) - 1) * 100:.1f}% from ATH" if latest["gold"] > 0 else ""
 
     # Concise Chinese situation summary
+    buffer_label = "已耗尽" if jpm_buffer <= 0 else "剩余{}天".format(jpm_buffer)
     parts = [
-        f"\u6d77\u5ce1\u901a\u884c\u91cf{latest['vesselCount']}\u8258/\u65e5\uff08\u6b63\u5e38{VESSEL_NORMAL}\uff09",
-        f"Brent ${latest['brent']}/\u6876" if latest["brent"] > 0 else "",
-        f"\u5c01\u9501\u7b2c{days_since}\u5929",
-        f"JPM\u7f13\u51b2{'\u5df2\u8017\u5c3d' if jpm_buffer <= 0 else f'\u5269\u4f59{jpm_buffer}\u5929'}",
+        "海峡通行量{}艘/日（正常{}）".format(latest['vesselCount'], VESSEL_NORMAL),
+        "Brent ${}/桶".format(latest['brent']) if latest["brent"] > 0 else "",
+        "封锁第{}天".format(days_since),
+        "JPM缓冲{}".format(buffer_label),
     ]
     if latest.get("incidents") and latest["incidents"] != "None":
         parts.append(first_sentence_zh(latest["incidents"], 60))
