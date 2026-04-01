@@ -3,17 +3,17 @@
   "phaseName": "CRISIS",
   "vesselCount": 11,
   "vesselNormal": 153,
-  "daysSinceClosure": 30,
+  "daysSinceClosure": 31,
   "jpmBuffer": 0,
-  "brent": 112.5,
-  "brentChg": "+54% since pre-crisis",
-  "wti": 102.5,
+  "brent": 103.5,
+  "brentChg": "+42% since pre-crisis",
+  "wti": 101.0,
   "wtiChg": "",
-  "gold": 4555.0,
-  "goldChg": "-18.6% from ATH",
-  "ttf": 55.0,
-  "vlcc": 450,
-  "insurance": "战争险保费1-5%船体价值/航次，VLCC单次通行保费约100-500万美元",
+  "gold": 4690.0,
+  "goldChg": "-16.2% from ATH",
+  "ttf": 48.0,
+  "vlcc": 400,
+  "insurance": "战争险保费0.8-5%船体价值/航次，VLCC单次通行保费约80-500万美元",
   "scenarios": [
     {
       "label": "快速解决 (2周内)",
@@ -39,51 +39,51 @@
   "thingsToWatch": [
     {
       "icon": "⚫",
-      "text": "JPM 25天储存缓冲已耗尽（第30天），海湾产油国被迫减产"
+      "text": "JPM 25天储存缓冲已耗尽（第31天），海湾产油国被迫减产"
     },
     {
       "icon": "🛢️",
-      "text": "Brent突破$100（当前$112.5），通胀压力加大"
+      "text": "Brent突破$100（当前$103.5），通胀压力加大"
     },
     {
       "icon": "🥇",
-      "text": "黄金$4,555/oz，距ATH -18.6% from ATH"
+      "text": "黄金$4,690/oz，距ATH -16.2% from ATH"
     },
     {
       "icon": "💥",
-      "text": "中巴联合呼吁停火，伊朗批准过境费立法，航运量维持稳定"
+      "text": "油价大跌超8%，中巴五点和平倡议公布，Trump称谈判进展顺利"
     },
     {
       "icon": "🇮🇷",
-      "text": "坚持\"智能管理\"，推进收费立法，拒绝美方方案"
+      "text": "否认直接谈判，坚持自卫优先，推进收费立法"
     }
   ],
-  "situationSummary": "海峡通行量11艘/日（正常153）。Brent $112.5/桶。封锁第30天。JPM缓冲已耗尽。中巴联合呼吁停火，伊朗批准过境费立法，航运量维持稳定。",
+  "situationSummary": "海峡通行量11艘/日（正常153）。Brent $103.5/桶。封锁第31天。JPM缓冲已耗尽。油价大跌超8%，中巴五点和平倡议公布，Trump称谈判进展顺利。",
   "timeline": [
     {
-      "time": "Apr 01 00:00",
+      "time": "Apr 01 17:00",
       "tag": "DIPLO",
-      "text": "中巴联合呼吁停火，巴基斯坦斡旋持续但僵局未破"
+      "text": "中巴五点倡议公布，巴基斯坦斡旋间接谈判"
     },
     {
-      "time": "Apr 01 00:00",
+      "time": "Apr 01 17:00",
       "tag": "ATTACK",
-      "text": "中巴联合呼吁停火，伊朗批准过境费立法，航运量维持稳定"
+      "text": "油价大跌超8%，中巴五点和平倡议公布，Trump称谈判进展顺利"
     },
     {
-      "time": "Apr 01 00:00",
+      "time": "Apr 01 17:00",
       "tag": "IRAN",
-      "text": "坚持\"智能管理\"，推进收费立法，拒绝美方方案"
+      "text": "否认直接谈判，坚持自卫优先，推进收费立法"
     },
     {
-      "time": "Apr 01 00:00",
+      "time": "Apr 01 17:00",
       "tag": "EVENT",
-      "text": "Trump延期至4月6日，美军持续部署，CENTCOM反制伊朗"
+      "text": "Trump延期至4月6日，美军持续部署，英国主办国际会议"
     },
     {
-      "time": "Apr 01 00:00",
+      "time": "Apr 01 17:00",
       "tag": "ALERT",
-      "text": "无"
+      "text": "油价跌幅超5%触发Alert"
     }
   ],
   "vesselHistory": [
