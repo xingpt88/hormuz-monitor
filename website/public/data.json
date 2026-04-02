@@ -3,17 +3,17 @@
   "phaseName": "CRISIS",
   "vesselCount": 11,
   "vesselNormal": 153,
-  "daysSinceClosure": 31,
+  "daysSinceClosure": 32,
   "jpmBuffer": 0,
-  "brent": 103.5,
-  "brentChg": "+42% since pre-crisis",
-  "wti": 101.0,
+  "brent": 112.78,
+  "brentChg": "+54% since pre-crisis",
+  "wti": 102.88,
   "wtiChg": "",
-  "gold": 4690.0,
-  "goldChg": "-16.2% from ATH",
-  "ttf": 48.0,
-  "vlcc": 400,
-  "insurance": "战争险保费0.8-5%船体价值/航次，VLCC单次通行保费约80-500万美元",
+  "gold": 4560.0,
+  "goldChg": "-18.5% from ATH",
+  "ttf": 55.0,
+  "vlcc": 423,
+  "insurance": "战争险保费5-10%船体价值/航次，美国宣布200亿美元再保险计划",
   "scenarios": [
     {
       "label": "快速解决 (2周内)",
@@ -39,51 +39,51 @@
   "thingsToWatch": [
     {
       "icon": "⚫",
-      "text": "JPM 25天储存缓冲已耗尽（第31天），海湾产油国被迫减产"
+      "text": "JPM 25天储存缓冲已耗尽（第32天），海湾产油国被迫减产"
     },
     {
       "icon": "🛢️",
-      "text": "Brent突破$100（当前$103.5），通胀压力加大"
+      "text": "Brent突破$100（当前$112.78），通胀压力加大"
     },
     {
       "icon": "🥇",
-      "text": "黄金$4,690/oz，距ATH -16.2% from ATH"
+      "text": "黄金$4,560/oz，距ATH -18.5% from ATH"
     },
     {
       "icon": "💥",
-      "text": "油价大跌超8%，中巴五点和平倡议公布，Trump称谈判进展顺利"
+      "text": "航运量周末反弹至15艘/日，中国集装箱船成功通行，伊朗议会推进过境费立法"
     },
     {
       "icon": "🇮🇷",
-      "text": "否认直接谈判，坚持自卫优先，推进收费立法"
+      "text": "推进\"智能管理\"计划，征收过境费，禁止美以船只通行"
     }
   ],
-  "situationSummary": "海峡通行量11艘/日（正常153）。Brent $103.5/桶。封锁第31天。JPM缓冲已耗尽。油价大跌超8%，中巴五点和平倡议公布，Trump称谈判进展顺利。",
+  "situationSummary": "海峡通行量11艘/日（正常153）。Brent $112.78/桶。封锁第32天。JPM缓冲已耗尽。航运量周末反弹至15艘/日，中国集装箱船成功通行，伊朗议会推进过境费立法。",
   "timeline": [
     {
-      "time": "Apr 01 17:00",
+      "time": "Mar 31 12:32",
       "tag": "DIPLO",
-      "text": "中巴五点倡议公布，巴基斯坦斡旋间接谈判"
+      "text": "巴基斯坦斡旋持续，美伊提案僵局未破"
     },
     {
-      "time": "Apr 01 17:00",
+      "time": "Mar 31 12:32",
       "tag": "ATTACK",
-      "text": "油价大跌超8%，中巴五点和平倡议公布，Trump称谈判进展顺利"
+      "text": "航运量周末反弹至15艘/日，中国集装箱船成功通行，伊朗议会推进过境费立法"
     },
     {
-      "time": "Apr 01 17:00",
+      "time": "Mar 31 12:32",
       "tag": "IRAN",
-      "text": "否认直接谈判，坚持自卫优先，推进收费立法"
+      "text": "推进\"智能管理\"计划，征收过境费，禁止美以船只通行"
     },
     {
-      "time": "Apr 01 17:00",
+      "time": "Mar 31 12:32",
       "tag": "EVENT",
-      "text": "Trump延期至4月6日，美军持续部署，英国主办国际会议"
+      "text": "Trump表达乐观但伊朗拒绝直接谈判，美军持续部署"
     },
     {
-      "time": "Apr 01 17:00",
+      "time": "Mar 31 12:32",
       "tag": "ALERT",
-      "text": "油价跌幅超5%触发Alert"
+      "text": "无"
     }
   ],
   "vesselHistory": [
@@ -130,6 +130,10 @@
     {
       "d": "4/1",
       "v": 11
+    },
+    {
+      "d": "4/2",
+      "v": 8
     }
   ],
   "sources": [
