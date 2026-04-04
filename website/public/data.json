@@ -3,7 +3,7 @@
   "phaseName": "CRISIS",
   "vesselCount": 11,
   "vesselNormal": 153,
-  "daysSinceClosure": 33,
+  "daysSinceClosure": 34,
   "jpmBuffer": 0,
   "brent": 112.78,
   "brentChg": "+54% since pre-crisis",
@@ -39,7 +39,7 @@
   "thingsToWatch": [
     {
       "icon": "⚫",
-      "text": "JPM 25天储存缓冲已耗尽（第33天），海湾产油国被迫减产"
+      "text": "JPM 25天储存缓冲已耗尽（第34天），海湾产油国被迫减产"
     },
     {
       "icon": "🛢️",
@@ -58,7 +58,7 @@
       "text": "推进\"智能管理\"计划，征收过境费，禁止美以船只通行"
     }
   ],
-  "situationSummary": "海峡通行量11艘/日（正常153）。Brent $112.78/桶。封锁第33天。JPM缓冲已耗尽。航运量周末反弹至15艘/日，中国集装箱船成功通行，伊朗议会推进过境费立法。",
+  "situationSummary": "海峡通行量11艘/日（正常153）。Brent $112.78/桶。封锁第34天。JPM缓冲已耗尽。航运量周末反弹至15艘/日，中国集装箱船成功通行，伊朗议会推进过境费立法。",
   "timeline": [
     {
       "time": "Mar 31 12:32",
@@ -105,6 +105,10 @@
     },
     {
       "d": "4/3",
+      "v": 12
+    },
+    {
+      "d": "4/4",
       "v": 12
     }
   ],
